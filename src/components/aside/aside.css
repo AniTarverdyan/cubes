@@ -1,0 +1,8 @@
+.aside {
+    position: absolute;
+    left: 238px;
+    top: 5px;
+    border: 2px solid black;
+    width: 100px;
+    height: 364px;
+}

@@ -1,14 +1,15 @@
 .button {
-  padding: 6px 10px;
-  background-color: white;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  color: #333;
-  cursor: pointer;
+    padding: 6px 10px;
+    margin: 8px;
+    background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
 }
 
 .button-primary {
-  background-color: #3d6fce;
-  border-width: 0;
-  color: white;
+    background-color: #3d6fce;
+    border-width: 0;
+    color: white;
 }
