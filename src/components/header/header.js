@@ -1,18 +1,18 @@
 import { Button } from "../../common/button/button";
 import "./header.css";
 
-const Header = ({ addCube }) => {
+const Header = ({ addCube, removeAllCubes, sortCubes }) => {
   const onAddButtonClick = () => {
     addCube();
   };
 
   return (
     <header className={"header"}>
-      <Button onClick={() => console.log("hi")}>Sort</Button>
+      <Button onClick={sortCubes}>Sort</Button>
       <Button onClick={onAddButtonClick} theme={"primary"}>
         Add
       </Button>
-      <Button>Remove</Button>
+      <Button onClick={removeAllCubes}>Remove</Button>
     </header>
   );
 };
