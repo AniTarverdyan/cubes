@@ -19,40 +19,61 @@ function App() {
     setCubes([]);
   };
 
-  const sortCubes = () => {
-    let length = cubes.length;
+  const bubbleSortCubes = () => {
+    let newCubes = [...cubes];
+    let length = newCubes.length;
 
     for (let j = 0; j < length - 1; j++) {
       for (let i = 0; i < length - 1; i++) {
-        if (cubes[i] < cubes[i + 1]) {
-          let a = cubes[i];
-          cubes[i] = cubes[i + 1];
-          cubes[i + 1] = a;
+        if (newCubes[i] < newCubes[i + 1]) {
+          let a = newCubes[i];
+          newCubes[i] = newCubes[i + 1];
+          newCubes[i + 1] = a;
         }
       }
     }
-    return cubes;
-  };
 
-  const removeCube = () => {
-    const newCubes = cubes.filter((cubes, index) => {
-      return index;
-    });
     setCubes(newCubes);
   };
 
+  const sortCubes = () => {
+    let newCubes = [...cubes];
+
+    newCubes.sort((c1, c2) => {
+      return c2 - c1;
+    });
+
+    setCubes(newCubes);
+  };
+
+  const removeCube = (index) => {
+    const newCubes = [...cubes];
+
+    newCubes.splice(index, 1);
+
+    setCubes(newCubes);
+  };
+
+  console.log(cubes);
   return (
     <div className={"app"}>
-      <div>
-        <Header
-          addCube={addCube}
-          removeAllCubes={removeAllCubes}
-          sortCubes={sortCubes}
-        />
-        <Main cubes={cubes} removeCube={removeCube} />
-        <Footer />
+      <div className={"app-content"}>
+        <div className={"app-header"}>
+          <Header
+            addCube={addCube}
+            removeAllCubes={removeAllCubes}
+            bubbleSortCubes={bubbleSortCubes}
+            sortCubes={sortCubes}
+          />
+        </div>
+        <div className={"app-main"}>
+          <Main cubes={cubes} removeCube={removeCube} />
+        </div>
+        <div className={"app-footer"}>
+          <Footer />
+        </div>
       </div>
-      <div>
+      <div className={"app-sidebar"}>
         <Aside />
       </div>
     </div>

@@ -1,5 +1,14 @@
 .header {
-  display: inline-block;
-  padding: 8px 10px;
-  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 12px;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.header-input input {
+  margin: 8px;
+  width: 120px;
+  height: 32px;
 }
