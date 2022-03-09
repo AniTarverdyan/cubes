@@ -1,10 +1,9 @@
 import { useState } from "react";
-import "./App.css";
+import "./app.css";
 import { Aside } from "./components/aside/aside";
 import { Footer } from "./components/footer/footer";
 import { Header } from "./components/header/header";
 import { Main } from "./components/main/main";
-
 
 function App() {
   const [cubes, setCubes] = useState([5, 3, 10, 6]);
@@ -17,8 +16,8 @@ function App() {
   };
 
   const removeAllCubes = () => {
-    setCubes([])
-  }
+    setCubes([]);
+  };
 
   const sortCubes = () => {
     let length = cubes.length;
@@ -33,22 +32,24 @@ function App() {
       }
     }
     return cubes;
-  }
+  };
 
   const removeCube = () => {
     const newCubes = cubes.filter((cubes, index) => {
       return index;
     });
     setCubes(newCubes);
-  }
+  };
 
   return (
     <div className={"app"}>
       <div>
-        <Header addCube={addCube} removeAllCubes={removeAllCubes} sortCubes={sortCubes} />
-        <Main
-          cubes={cubes}
-          removeCube={removeCube} />
+        <Header
+          addCube={addCube}
+          removeAllCubes={removeAllCubes}
+          sortCubes={sortCubes}
+        />
+        <Main cubes={cubes} removeCube={removeCube} />
         <Footer />
       </div>
       <div>
