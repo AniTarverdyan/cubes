@@ -1,0 +1,19 @@
+.cube {
+  padding: 3px 6px;
+  margin: 5px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  height: 40px;
+  width: 40px;
+  border: 2px solid black;
+}
+
+.icon-close {
+  position: relative;
+  top: -12px;
+  left: 40px;
+  width: 7px;
+  height: 7px;
+  cursor: pointer;
+}

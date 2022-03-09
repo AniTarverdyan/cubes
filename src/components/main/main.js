@@ -1,17 +1,13 @@
-import { Cubes } from "../cubes/cubes"
-import "./main.css"
+import { Cube } from "../cube/cube";
+import "./main.css";
 
-const Main = () => {
-    return (
-<div className="main">
-    <Cubes /> 
-    <Cubes /> 
-    <Cubes /> 
-    <Cubes /> 
-
-
-</div>
-
-    )
-}
-export { Main }
+const Main = ({ cubes }) => {
+  return (
+    <div className="main">
+      {cubes.map((cube, index) => {
+        return <Cube key={index} cube={cube} />;
+      })}
+    </div>
+  );
+};
+export { Main };
